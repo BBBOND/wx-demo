@@ -50,7 +50,12 @@
 ```
 
 ### demo截图
+- 请求中
 
+![](https://raw.githubusercontent.com/BBBOND/wx-demo/master/screenshot/ScreenShot01.png)
+- 请求结束
+
+![](https://raw.githubusercontent.com/BBBOND/wx-demo/master/screenshot/ScreenShot00.png)
 ### 其他
 
 脚手架还有很多缺陷，欢迎一起修改完善
