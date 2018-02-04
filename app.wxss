@@ -1,0 +1,21 @@
+/**app.wxss**/
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+page {
+  /** 定义通用全局变量 **/
+  --border-color: #9b9b9b;
+  --border-color-second: #f2f2f2;
+  --border-color-third: #e8e8e8;
+
+  --dividing-color: #d5d7dd;
+
+  --border-height: 2rpx;
+  --dividing-height: 1rpx;
+}

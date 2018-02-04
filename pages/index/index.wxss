@@ -1,0 +1,56 @@
+@import "./search/search.wxss";
+
+.container scroll-view{
+  padding: 12rpx 0 24rpx 0;
+}
+
+.container .load-more {
+  width: 100%;
+  text-align: center;
+  margin-top: 24rpx;  
+}
+
+.container .subject-wrap {
+  display: flex;
+  flex-direction: row;
+  margin-top: 12rpx;
+  width: 100%;
+}
+
+.subject-wrap .subject-img {
+  margin-left: 12rpx;
+  margin-right: 12rpx;
+  width: 340rpx;
+}
+
+.subject-wrap .subject-des-wrap {
+  flex: 1;
+  padding: 12rpx 0;
+}
+
+.subject-des-wrap .title {
+  font-size: 36rpx;
+}
+
+.subject-des-wrap .genres-wrap {
+  display: flex;
+  flex-direction: row;
+  margin-top: 12rpx;
+  flex-wrap: wrap;
+}
+
+.genres-wrap .genres {
+  display: inline-block;
+  padding: 2rpx 10rpx;
+  font-size: 24rpx;
+  border: var(--border-height) solid var(--border-color-second);
+  border-radius: 500rpx;
+  margin-right: 8rpx;
+  color: white;
+  background-color: red;
+}
+
+.subject-des-wrap .rate {
+  margin-top: 12rpx;
+  font-size: 100rpx;
+}

@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+  <scroll-view scroll-y="true">
+    <include src="./search/search.wxml" />
+    <view class="subject-wrap" wx:for="{{props.index.subjects}}" wx:key="{{item.id}}">
+      <image lazy-load="true" mode='scaleToFill' class='subject-img' src='{{item.images.small}}' />
+      <view class='subject-des-wrap'>
+        <view class='title'>({{item.year}}){{item.title}}</view>
+        <view class='genres-wrap'>
+          <view class='genres' wx:for="{{item.genres}}" wx:key="{{item}}">{{item}}</view>
+        </view>
+        <view class='rate'>{{item.rating.average}}分</view>
+      </view>
+    </view>
+    <view wx:if="{{!hasMore}}" class='load-more'>---- 已经到底了 ----</view>
+    <view wx:else class='load-more' bindtap='onLoadMore'>---- 加载更多 ----</view>
+  </scroll-view>
+</view>

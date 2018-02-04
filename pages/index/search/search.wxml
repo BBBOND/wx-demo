@@ -1,0 +1,4 @@
+<view class='search-wrap'>
+  <input bindinput="onInputCity" placeholder="{{title || city}}" auto-focus/>
+  <button type="primary" size="mini" bindtap="onSearch">搜索</button>
+</view>
