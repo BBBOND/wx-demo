@@ -27,20 +27,18 @@ export const get = (url, headers) => {
             url: url,
             header: headers || {},
             success: (res) => {
-                if (res.statusCode == 200) {
-                    logSuccess('GET', url, headers, undefined, res);
-                    resolve(res.data);
-                } else {
-                    let err = {
+                let data = res.data;
+                if (Number(res.statusCode) !== 200) {
+                    data = {
+                        ...data,
                         code: res.statusCode,
                         msg: res.data.message,
-                        ...res.data
                     };
-                    logFailed('GET', url, headers, undefined, err);
-                    reject(err);
                 }
+                logSuccess('GET', url, headers, undefined, data);
+                resolve(data);
             },
-            fail: (error, a, b) => {
+            fail: (error) => {
                 logFailed('GET', url, headers, undefined, error);
                 reject({code: 1, msg: "网络请求失败", ...error});
             }
@@ -57,20 +55,18 @@ export const post = (url, headers, params) => {
             header: headers || {},
             data: params,
             success: (res) => {
-                if (res.statusCode == 200) {
-                    logSuccess('POST', url, headers, params, res);
-                    resolve(res.data);
-                } else {
-                    let err = {
+                let data = res.data;
+                if (Number(res.statusCode) !== 200) {
+                    data = {
+                        ...data,
                         code: res.statusCode,
                         msg: res.data.message,
-                        ...res.data
                     };
-                    logFailed('POST', url, headers, params, err);
-                    reject(err);
                 }
+                logSuccess('POST', url, headers, params, data);
+                resolve(data);
             },
-            fail: (error, a, b) => {
+            fail: (error) => {
                 logFailed('POST', url, headers, params, {msg: "网络请求失败", error});
                 reject({code: 1, msg: "网络请求失败", ...error});
             }
@@ -87,20 +83,18 @@ export const put = (url, headers, params) => {
             header: headers || {},
             data: params,
             success: (res) => {
-                if (res.statusCode == 200) {
-                    logSuccess('PUT', url, headers, params, res);
-                    resolve(res.data);
-                } else {
-                    let err = {
+                let data = res.data;
+                if (Number(res.statusCode) !== 200) {
+                    data = {
+                        ...data,
                         code: res.statusCode,
                         msg: res.data.message,
-                        ...res.data
                     };
-                    logFailed('PUT', url, headers, params, err);
-                    reject(err);
                 }
+                logSuccess('PUT', url, headers, params, data);
+                resolve(data);
             },
-            fail: (error, a, b) => {
+            fail: (error) => {
                 logFailed('PUT', url, headers, params, error);
                 reject({code: 1, msg: "网络请求失败", ...error});
             }
@@ -117,20 +111,18 @@ export const del = (url, headers, params) => {
             header: headers || {},
             data: params,
             success: (res) => {
-                if (res.statusCode == 200) {
-                    logSuccess('DELETE', url, headers, params, res);
-                    resolve(res.data);
-                } else {
-                    let err = {
+                let data = res.data;
+                if (Number(res.statusCode) !== 200) {
+                    data = {
+                        ...data,
                         code: res.statusCode,
                         msg: res.data.message,
-                        ...res.data
                     };
-                    logFailed('DELETE', url, headers, params, err);
-                    reject(err);
                 }
+                logSuccess('DELETE', url, headers, params, data);
+                resolve(data);
             },
-            fail: (error, a, b) => {
+            fail: (error) => {
                 logFailed('DELETE', url, headers, params, error);
                 reject({code: 1, msg: "网络请求失败", ...error});
             }
